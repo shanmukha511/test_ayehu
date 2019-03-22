@@ -44,13 +44,13 @@ stage("Docker")
    sh "docker login --username shanmukha511 --password  raviteja511"
    sh "docker tag tomcat:tomcat3 shanmukha511/tomcat:tomcat3"
    sh "docker push shanmukha511/tomcat:tomcat3"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'sudo -i"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'apt-get update"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'curl -fsSL get.docker.com -o get-docker.sh|sh get-docker.sh"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'docker pull shanmukha511/tomcat:tomcat3'"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'docker images'"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'docker run -it -d --name tomcat -p 8080:8888 shanmukha511/tomcat:tomcat3 /bin/bash'"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'docker ps'"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.47.213 'sudo -i"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.47.213 'apt-get update"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.47.213 'curl -fsSL get.docker.com -o get-docker.sh|sh get-docker.sh"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.47.213 'docker pull shanmukha511/tomcat:tomcat3'"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.47.213 'docker images'"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.47.213 'docker run -it -d --name tomcat -p 8080:8888 shanmukha511/tomcat:tomcat3 /bin/bash'"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.47.213 'docker ps'"
 
   }
  }
