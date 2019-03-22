@@ -21,7 +21,7 @@ stage("build")
 
  steps{
 
- sh "mvn deploy"
+ sh "mvn clean package"
   
  //sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/${params.Jobname}/target/biomni-1.0-SNAPSHOT.jar root@${params.servername}:/tmp"
   //sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'docker cp /tmp/biomni-1.0-SNAPSHOT.jar ${params.ContainerId}:/usr/local/tomcat/webapps'"
