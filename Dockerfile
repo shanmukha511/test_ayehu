@@ -8,6 +8,6 @@ RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install openjdk-8-jdk wget
 RUN apt-get -y install curl
 #COPY test.txt /shanmukha
-COPY target/*.war /shanmukha
+COPY /root/build/workspace/Pipeline Ayehu/target/*.war /shanmukha
 WORKDIR /usr/local/tomcat
 EXPOSE 8080
