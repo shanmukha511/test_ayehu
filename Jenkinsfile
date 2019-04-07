@@ -1,14 +1,14 @@
 pipeline
 {
-  withCredentials([
+  
+agent 
+{
+label "UnixSlave"
+ withCredentials([
 
       [$class: 'UsernamePasswordMultiBinding', credentialsId: DockerHubCred, usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
 
   ])
-agent 
-{
-label "UnixSlave"
- 
 }
  
 
