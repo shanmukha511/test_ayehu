@@ -6,7 +6,13 @@ agent
 label "UnixSlave"
 
 }
- 
+  
+
+  environment {
+    registry = "shanmukha511/tomcat"
+    registryCredential = 'DockerHubCred'
+}
+  
 
 parameters
 {
@@ -43,11 +49,11 @@ stage("Docker")
   {
    //sh "curl -fsSL get.docker.com -o get-docker.sh"
    //sh "sh get-docker.sh"
-     withCredentials([
+     //withCredentials([
 
-      [$class: 'UsernamePasswordMultiBinding', credentialsId: 'DockerHubCred', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
+      //[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DockerHubCred', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
 
-  ])
+ // ])
    sh	"echo  ${GIT_USER}"
 sh "echo ${GIT_PASS}"
    
