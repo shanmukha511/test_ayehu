@@ -1,5 +1,10 @@
 pipeline
 {
+  withCredentials([
+
+      [$class: 'UsernamePasswordMultiBinding', credentialsId: DockerHubCred, usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
+
+  ])
 agent 
 {
 label "UnixSlave"
@@ -15,11 +20,7 @@ parameters
  
  
 }
- withCredentials([
 
-      [$class: 'UsernamePasswordMultiBinding', credentialsId: DockerHubCred, usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
-
-  ])
 stages
 {
 stage("build")
