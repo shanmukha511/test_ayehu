@@ -41,7 +41,7 @@ stage("Docker")
    sh "docker build -t tomcat:$BUILD_NUMBER ."
    sh "docker images"
    //sh "docker login --username shanmukha511 --password  raviteja511"
-   //sh "docker tag tomcat:tomcat3 shanmukha511/tomcat:tomcat3"
+   /sh "docker tag tomcat:$BUILD_NUMBER shanmukha511/tomcat"
    //sh "docker push shanmukha511/tomcat:tomcat3"
     
      withCredentials([usernamePassword(credentialsId: 'DockerHubCred', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
