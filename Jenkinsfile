@@ -7,8 +7,7 @@ label "UnixSlave"
 
 }
   
-
-  environment {
+environment {
     registry = "shanmukha511/tomcat"
     registryCredential = 'DockerHubCred'
 }
@@ -43,6 +42,7 @@ stage("build")
  }
 
 }
+  
 stage("Docker")
  {
   steps
@@ -54,7 +54,7 @@ stage("Docker")
       //[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DockerHubCred', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
 
  // ])
- withDockerRegistry([ credentialsId: "DockerHubCred", url: "" ])
+ //withDockerRegistry([ credentialsId: "DockerHubCred", url: "" ])
    
    sh "docker info"
    sh "docker build -t tomcat:tomcat3 ."
