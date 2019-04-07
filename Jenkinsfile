@@ -40,6 +40,8 @@ stage("Docker")
   {
    //sh "curl -fsSL get.docker.com -o get-docker.sh"
    //sh "sh get-docker.sh"
+   sh "echo $Username"
+   sh "echo $Password"
    sh "docker info"
    sh "docker build -t tomcat:tomcat3 ."
    sh "docker images"
