@@ -38,8 +38,8 @@ stage("Docker")
  {
   steps
   {
-   sh "curl -fsSL get.docker.com -o get-docker.sh"
-   sh "sh get-docker.sh"
+   //sh "curl -fsSL get.docker.com -o get-docker.sh"
+   //sh "sh get-docker.sh"
    sh "docker info"
    sh "docker build -t tomcat:tomcat3 ."
    sh "docker images"
