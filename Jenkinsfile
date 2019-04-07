@@ -3,6 +3,7 @@ pipeline
 agent 
 {
 label "UnixSlave"
+ 
 }
  
 
@@ -12,8 +13,13 @@ parameters
  string(name:  'servername',description: 'Please enter ip address of Machine where you want to deploy artifact')
  string(name:  'Jobname',description: 'Please Jobname to get ocation of artifact')
  
-}
  
+}
+ withCredentials([
+
+      [$class: 'UsernamePasswordMultiBinding', credentialsId: DockerHubCred, usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
+
+  ])
 stages
 {
 stage("build")
@@ -40,8 +46,8 @@ stage("Docker")
   {
    //sh "curl -fsSL get.docker.com -o get-docker.sh"
    //sh "sh get-docker.sh"
-   sh	"echo  ${Username}"
-sh "echo ${Password}"
+   sh	"echo  ${GIT_USER}"
+sh "echo ${GIT_PASS}"
    
    sh "docker info"
    sh "docker build -t tomcat:tomcat3 ."
