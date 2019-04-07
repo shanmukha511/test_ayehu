@@ -6,12 +6,6 @@ agent
 label "UnixSlave"
 
 }
-  
-environment {
-    registry = "shanmukha511/tomcat"
-    registryCredential = 'DockerHubCred'
-}
-  
 
 parameters
 {
@@ -30,13 +24,7 @@ stage("build")
  steps{
 
  sh "mvn clean package"
-  
- //sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/${params.Jobname}/target/biomni-1.0-SNAPSHOT.jar root@${params.servername}:/tmp"
-  //sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'docker cp /tmp/biomni-1.0-SNAPSHOT.jar ${params.ContainerId}:/usr/local/tomcat/webapps'"
-  //def ret = sh(script: 'uname', returnStdout: true)
-  //println ret
-  //sh "curl -ls ${params.servername}:8888/biomni | head -n 1 | cut -c 10-12" > $a
-  //sh "echo $a"
+
 
   
  }
@@ -47,17 +35,10 @@ stage("Docker")
  {
   steps
   {
-   //sh "curl -fsSL get.docker.com -o get-docker.sh"
-   //sh "sh get-docker.sh"
-     //withCredentials([
-
-      //[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DockerHubCred', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
-
- // ])
- //withDockerRegistry([ credentialsId: "DockerHubCred", url: "" ])
+  
    
    sh "docker info"
-   sh "docker build -t tomcat:tomcat3 ."
+   sh "docker build -t tomcat:$BUILD_NUMBER ."
    sh "docker images"
    //sh "docker login --username shanmukha511 --password  raviteja511"
    //sh "docker tag tomcat:tomcat3 shanmukha511/tomcat:tomcat3"
@@ -65,7 +46,7 @@ stage("Docker")
     
      withCredentials([usernamePassword(credentialsId: 'DockerHubCred', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          sh 'docker push shanmukha511/tomcat:tomcat3'
+          sh 'docker push shanmukha511/tomcat:$BUILD_NUMBER'
    //sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'sudo -i'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'apt-get update'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'curl -fsSL get.docker.com -o get-docker.sh|sh get-docker.sh'"
