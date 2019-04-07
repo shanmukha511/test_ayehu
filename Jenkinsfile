@@ -54,8 +54,7 @@ stage("Docker")
       //[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DockerHubCred', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
 
  // ])
-   sh	"echo  ${GIT_USER}"
-sh "echo ${GIT_PASS}"
+ withDockerRegistry([ credentialsId: "DockerHubCred", url: "" ])
    
    sh "docker info"
    sh "docker build -t tomcat:tomcat3 ."
