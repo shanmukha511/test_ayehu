@@ -59,9 +59,13 @@ stage("Docker")
    sh "docker info"
    sh "docker build -t tomcat:tomcat3 ."
    sh "docker images"
-   sh "docker login --username shanmukha511 --password  raviteja511"
-   sh "docker tag tomcat:tomcat3 shanmukha511/tomcat:tomcat3"
-   sh "docker push shanmukha511/tomcat:tomcat3"
+   //sh "docker login --username shanmukha511 --password  raviteja511"
+   //sh "docker tag tomcat:tomcat3 shanmukha511/tomcat:tomcat3"
+   //sh "docker push shanmukha511/tomcat:tomcat3"
+    
+     withCredentials([usernamePassword(credentialsId: 'DockerHubCred', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh 'docker push shanmukha511/tomcat:tomcat3'
    //sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'sudo -i'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'apt-get update'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'curl -fsSL get.docker.com -o get-docker.sh|sh get-docker.sh'"
