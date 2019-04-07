@@ -46,7 +46,7 @@ stage("Docker")
    sh "docker login --username shanmukha511 --password  raviteja511"
    sh "docker tag tomcat:tomcat3 shanmukha511/tomcat:tomcat3"
    sh "docker push shanmukha511/tomcat:tomcat3"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'sudo -i'"
+   //sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'sudo -i'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'apt-get update'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'curl -fsSL get.docker.com -o get-docker.sh|sh get-docker.sh'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'docker pull shanmukha511/tomcat:tomcat3'"
