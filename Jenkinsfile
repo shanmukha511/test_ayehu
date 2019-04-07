@@ -49,6 +49,7 @@ stage("Docker")
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'curl -fsSL get.docker.com -o get-docker.sh|sh get-docker.sh'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'docker pull shanmukha511/tomcat:tomcat3'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'docker images'"
+   sh " docker ps -q --filter "name=tomcat" | grep -q . && docker stop tomcat && docker rm -fv tomcat"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'docker run -it -d --name tomcat -p 8080:8888 shanmukha511/tomcat:tomcat3 /bin/bash'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no  root@${params.servername} 'docker ps'"
      }
