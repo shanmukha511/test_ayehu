@@ -38,12 +38,12 @@ stage("Docker")
    sh "docker build -t tomcat:$BUILD_NUMBER ."
    sh "docker images"
    //sh "docker login --username shanmukha511 --password  raviteja511"
-   sh "docker tag tomcat:$BUILD_NUMBER shanmukha511/tomcat"
+   sh "docker tag tomcat:$BUILD_NUMBER shanmukha511/tomcat:$BUILD_NUMBER"
    //sh "docker push shanmukha511/tomcat:tomcat3"
     
      withCredentials([usernamePassword(credentialsId: 'DockerHubCred', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          sh 'docker push shanmukha511/tomcat'
+          sh 'docker push shanmukha511/tomcat:$BUILD_NUMBER'
    //sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'sudo -i'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'apt-get update'"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@${params.servername} 'curl -fsSL get.docker.com -o get-docker.sh|sh get-docker.sh'"
