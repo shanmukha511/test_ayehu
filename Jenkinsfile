@@ -45,7 +45,7 @@ stage("Docker")
    //sh "sh get-docker.sh"
      withCredentials([
 
-      [$class: 'UsernamePasswordMultiBinding', credentialsId: DockerHubCred, usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
+      [$class: 'UsernamePasswordMultiBinding', credentialsId: 'DockerHubCred', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS'],
 
   ])
    sh	"echo  ${GIT_USER}"
