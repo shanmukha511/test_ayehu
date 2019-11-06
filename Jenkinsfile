@@ -1,12 +1,20 @@
 pipeline
 {
   
- agent { label 'master' }
-  
-  environment {
-        VER = VersionNumber([versionNumberString : '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_DAY}.TEST-API${BUILDS_ALL_TIME}', projectStartDate : '2018-11-25']);
-        
-    }
+agent 
+{
+label "UnixSlave"
+
+}
+
+parameters
+{
+ choice(name: 'Environment',choices: 'Dev\nUAT\nPRD',description: 'Please select Environment')
+ string(name:  'servername',description: 'Please enter ip address of Machine where you want to deploy artifact')
+ string(name:  'Jobname',description: 'Please Jobname to get ocation of artifact')
+ 
+ 
+}
 
 stages
 {
@@ -20,21 +28,6 @@ stage("build")
 
 }
   
-stage("Docker")
- {
-  steps
-  {
-
-    
-     //withCredentials([usernamePassword(credentialsId: 'DockerHubCred', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-       //   sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-         // sh 'docker push shanmukha511/tomcat:$BUILD_NUMBER'
-    sh "echo hi"
-
-     }
-  }
- }
-
 
 }
 
