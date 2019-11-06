@@ -51,7 +51,7 @@ pipeline {
 						spec: '''{
 							  "files": [
 								{
-								  "pattern": "/var/jenkins_home/workspace/Ayehu/target/AyehuWebApplication.war",
+								  "pattern": "/var/jenkins_home/workspace/Ayehu/target/*.war",
 								  "target": "test_maven/"
 								}
 							 ]
