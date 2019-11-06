@@ -22,9 +22,36 @@ stage("build")
  }
 
 }
-  
+
+stage("Docker")
+ {
+  steps
+  {
+
+		  rtUpload (
+    serverId: 'Artifactory-1',
+    spec: '''{
+          "files": [
+            {
+              "pattern": "/var/jenkins_home/workspace/Ayehu/target/AyehuWebApplication.war",
+              "target": "test_maven/"
+            }
+         ]
+    }''',
+ 
+    // Optional - Associate the uploaded files with the following custom build name and build number,
+    // as build artifacts.
+    // If not set, the files will be associated with the default build name and build number (i.e the
+    // the Jenkins job name and number).
+    buildName: 'testbuild',
+    buildNumber: $VER
+)
+
+     }
+  }
+ }
 
 }
 
  
-}
+
