@@ -62,7 +62,7 @@ pipeline {
     // If not set, the files will be associated with the default build name and build number (i.e the
     // the Jenkins job name and number).
     //buildName: 'testbuild',
-   buildNumber: ${VER}
+   buildNumber: "${VER}"
 )
 
      }
