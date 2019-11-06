@@ -30,6 +30,7 @@ stage("Docker")
      //withCredentials([usernamePassword(credentialsId: 'DockerHubCred', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
        //   sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
          // sh 'docker push shanmukha511/tomcat:$BUILD_NUMBER'
+    sh "echo hi"
 
      }
   }
