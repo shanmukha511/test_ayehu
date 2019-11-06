@@ -1,43 +1,61 @@
-pipeline
-{
-  
-agent 
-{
-label "master"
+def STATUS = ['SUCCESS': 'good', 'FAILURE': 'danger', 'UNSTABLE': 'danger', 'ABORTED': 'danger']
 
-}
-
-  environment {
+pipeline {
+    agent { label 'master' }
+   
+    environment {
         VER = VersionNumber([versionNumberString : '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_DAY}.TEST-API${BUILDS_ALL_TIME}', projectStartDate : '2018-11-25']);
         
     }
-stages
-{
-stage("build")
-{
+    stages 
+	{
 
- steps{
-
- sh "mvn clean package"
- }
-
-}
-
-stage("Docker")
- {
-  steps
-  {
-
-		  rtUpload (
-    serverId: 'Artifactory-1',
-    spec: '''{
-          "files": [
-            {
-              "pattern": "/var/jenkins_home/workspace/Ayehu/target/AyehuWebApplication.war",
-              "target": "test_maven/"
-            }
-         ]
-    }''',
+        stage('SCM') {
+            steps {
+                step([$class: 'WsCleanup'])
+                script{
+                    currentBuild.displayName = VER
+                    sh  "echo $VER"          
+                }
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/shanmukha511/test_ayehu.git']]])
+				}
+				
+				}
+				
+				 stage('Build') 
+				 {
+					environment 
+					{
+						GIT_COMMIT = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+					}
+					steps
+					{
+						sh "echo $GIT_COMMIT"
+						sh "mvn clean package"
+                
+					script 
+					{
+                    GIT_COMMIT_HASH = sh (script: "git log --pretty=raw", returnStdout: true)
+                    //sh "hi"
+                    //sh "echo $GIT_COMMIT_HASH"
+					}
+                
+					}
+				  }
+				 stage("ArtifactoryPublish")
+				  {
+					steps
+				    {
+						rtUpload (
+					    serverId: 'Artifactory-1',
+						spec: '''{
+							  "files": [
+								{
+								  "pattern": "/var/jenkins_home/workspace/Ayehu/target/AyehuWebApplication.war",
+								  "target": "test_maven/"
+								}
+							 ]
+						}''',
  
     // Optional - Associate the uploaded files with the following custom build name and build number,
     // as build artifacts.
@@ -49,10 +67,6 @@ stage("Docker")
 
      }
   }
- }
-
-}
-
- 
-
-
+	}
+				}
+            
