@@ -3,19 +3,14 @@ pipeline
   
 agent 
 {
-label "UnixSlave"
+label "master"
 
 }
 
-parameters
-{
- choice(name: 'Environment',choices: 'Dev\nUAT\nPRD',description: 'Please select Environment')
- string(name:  'servername',description: 'Please enter ip address of Machine where you want to deploy artifact')
- string(name:  'Jobname',description: 'Please Jobname to get ocation of artifact')
- 
- 
-}
-
+  environment {
+        VER = VersionNumber([versionNumberString : '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_DAY}.TEST-API${BUILDS_ALL_TIME}', projectStartDate : '2018-11-25']);
+        
+    }
 stages
 {
 stage("build")
