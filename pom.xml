@@ -4,7 +4,7 @@
   <groupId>com.companyname.ayehu</groupId>
   <artifactId>AyehuWebApplication</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>${VER}</version>
   <name>AyehuWebApplication Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>AyehuWebApplication${VER}</finalName>
+    <finalName>AyehuWebApplication</finalName>
   </build>
 </project>
