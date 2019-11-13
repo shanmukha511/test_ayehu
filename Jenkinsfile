@@ -51,7 +51,7 @@ pipeline {
 						spec: '''{
 							  "files": [
 								{
-								  "pattern": "/var/jenkins_home/workspace/Publish Artifact/target/*.war",
+								  "pattern": "/tmp/*.war",
 								  "target": "test_maven/AyehuWebApplication_${VER}.war"
 								}
 							 ]
