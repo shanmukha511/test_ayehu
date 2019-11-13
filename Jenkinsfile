@@ -52,7 +52,7 @@ pipeline {
 							  "files": [
 								{
 								  "pattern": "/var/jenkins_home/workspace/Publish Artifact/target/*.war",
-								  "target": "test_maven/"
+								  "target": "test_maven/AyehuWebApplication_${VER}.war"
 								}
 							 ]
 						}''',
