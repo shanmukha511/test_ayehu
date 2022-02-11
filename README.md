@@ -32,12 +32,14 @@ Configuration
 | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------| ------------------------------- |
 | **ReplicaCount**                                                            |
 | `replicaCount`                                                              | Number of nifi nodes                                                                                               | `1`                             |
+| **Namespace**                                                            |
+| `namespace`                                                              | Namespace where application will be deployed                                                                                              | `nil`                             |
 | **Image**                                                                   |
 | `image.registry`                                                          | nifi Image name                                                                                                    | `nil`                   |
 | `image.tag`                                                                 | nifi Image tag                                                                                                     | `nil`                        |
 | `image.pullPolicy`                                                          | nifi Image pull policy                                                                                             | `nil`                  |
 | `image.pullSecret`                                                          | nifi Image pull secret                                                                                             | `nil`                           |
-| `image.pullSecret`                                                          | nifi pull secret required or not                                                                                             | `nil`                           |
+| `image.usePullSecret`                                                          | nifi pull secret required or not                                                                                             | `nil`                           |
 | **SecurityContext**                                                         |
 | `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `nil`                          |
 | `securityContext.fsGroup`                                                   | nifi Docker Group                                                                                                  | `nil`                          |
