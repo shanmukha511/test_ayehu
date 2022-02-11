@@ -34,6 +34,10 @@ Configuration
 | `replicaCount`                                                              | Number of nifi nodes                                                                                               | `1`                             |
 | **Namespace**                                                            |
 | `namespace`                                                              | Namespace where application will be deployed                                                                                              | `nil`                             |
+| **Environment**                                                            |
+| `env`                                                              | Environment Label where application will be deployed                                                                                              | `nil`                             |
+| **Name**                                                            |
+| `Name`                                                              |  Application will be deployed                                                                                             | `nil`                             |
 | **Image**                                                                   |
 | `image.registry`                                                          | nifi Image name                                                                                                    | `nil`                   |
 | `image.tag`                                                                 | nifi Image tag                                                                                                     | `nil`                        |
