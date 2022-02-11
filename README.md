@@ -33,13 +33,18 @@ Configuration
 | **ReplicaCount**                                                            |
 | `replicaCount`                                                              | Number of nifi nodes                                                                                               | `1`                             |
 | **Image**                                                                   |
-| `image.repository`                                                          | nifi Image name                                                                                                    | `apache/nifi`                   |
+| `image.registry`                                                          | nifi Image name                                                                                                    | `apache/nifi`                   |
 | `image.tag`                                                                 | nifi Image tag                                                                                                     | `1.14.0`                        |
 | `image.pullPolicy`                                                          | nifi Image pull policy                                                                                             | `IfNotPresent`                  |
 | `image.pullSecret`                                                          | nifi Image pull secret                                                                                             | `nil`                           |
+| `image.usePullSecret | `nil`                         |                      | Use Pull secret or not
+
 | **SecurityContext**                                                         |
 | `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `1000`                          |
 | `securityContext.fsGroup`                                                   | nifi Docker Group                                                                                                  | `1000`                          |
+| `securityContext.runAsGroup`                                                | nifi Docker Group
+                     | `1000`                           |    
+
 | **sts**                                                                     |
 | `sts.useHostNetwork`                                                            | If true, use the host's network                                                                                    | `nil`                         |
 | `sts.serviceAccount.create`    | If true, a service account will be created and used by the statefulset | `false` |
