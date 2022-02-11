@@ -1,28 +1,30 @@
 Helm Chart for Apache NiFi
 
-
-Introduction
+## Introduction
 
 This Helm chart installs Apache NiFi 1.14.0 in a Kubernetes cluster.
 
-Prerequisites
+## Prerequisites
 
-Kubernetes cluster 1.10+
-Helm 3.0.0+
+- Kubernetes cluster 1.10+
+- Helm 3.0.0+
 
+## Installation
 
-Install the chart
+### Install the chart
 
 Install the nifi helm chart with a release name my-release:
 
 helm install my-release nifi/
 
 
-Uninstallation
+## Uninstallation
 
 To uninstall/delete the my-release deployment:
 
 helm uninstall my-release
+
+## Configuration
 
 Configuration
 
