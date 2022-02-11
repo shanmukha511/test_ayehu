@@ -42,7 +42,6 @@ Configuration
 | `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `1000`                          |
 | `securityContext.fsGroup`                                                   | nifi Docker Group                                                                                                  | `1000`                          |
 | `securityContext.runAsGroup`                                                   | nifi Docker Group                                                                                                  | `1000`                          |
-
 | **sts**                                                                     |
 | `sts.useHostNetwork`                                                            | If true, use the host's network                                                                                    | `nil`                         |
 | `sts.serviceAccount.create`    | If true, a service account will be created and used by the statefulset | `false` |
