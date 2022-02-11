@@ -1,4 +1,4 @@
-Helm Chart for Apache NiFi
+# Helm Chart for Apache NiFi
 
 ## Introduction
 
