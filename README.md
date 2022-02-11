@@ -41,8 +41,7 @@ Configuration
 | **SecurityContext**                                                         |
 | `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `1000`                          |
 | `securityContext.fsGroup`                                                   | nifi Docker Group                                                                                                  | `1000`                          |
-| `securityContext.runAsGroup`                                                | nifi Docker Group
-                     | `1000`                           |    
+| `securityContext.runAsGroup`                                                   | nifi Docker Group                                                                                                  | `1000`                          |
 
 | **sts**                                                                     |
 | `sts.useHostNetwork`                                                            | If true, use the host's network                                                                                    | `nil`                         |
