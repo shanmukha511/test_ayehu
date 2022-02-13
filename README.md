@@ -63,12 +63,10 @@ Configuration
 | **containers**
 | `containers.name`   | Container Name               | `nil`                           | 
 | `containers.ports`   | Container ports                | `[]`                           | 
-
 | **probes**
 | `probes`                                                                | Readiness and Liveliness probes need to be configured if required            | `nil`                           |
 | **Resources**
 | `resources`                            | Pod resource requests and limits            | `nil`                           |
-
 | **volumeClaimTemplates**
 | `volumeClaimTemplates.enabled`                            | If volumeClaimTemplates needed set enable to true            | `nil`                           |
 | `volumeClaimTemplates.claim`                            | volumeClaimTemplates is a list accepts pvc claims with properities of name and size         | `[]`                           
