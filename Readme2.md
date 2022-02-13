@@ -52,7 +52,6 @@ Configuration
 | `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `nil`                          |
 | `securityContext.fsGroup`                                                   | nifi file system Group                                                                                                  | `nil`                          |
 | `securityContext.runAsGroup`                                                   | nifi Docker Group                               | `nil`                          |
-                          |
 | **Service**                                                                     |
 | `service.annotations`                                                            | ADD Annotation If LoadBalancer InternalIP set to true                                                                                 | `nil`                         |
 | `service.type`    | `ClusterIP` | Service type  |
