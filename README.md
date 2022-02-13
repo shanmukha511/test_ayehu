@@ -40,23 +40,27 @@ Configuration
 | `Name`                                                              |  Application will be deployed                                                                                             | `nil`                             |
 | **Image**                                                                   |
 | `image.registry`                                                          | nifi Image name                                                                                                    | `nil`                   |
-| `image.tag`                                                                 | nifi Image tag                                                                                                     | `nil`                        |
+| `image.tag`                                                                   | nifi Image tag                                                                                                     | `nil`                        |
 | `image.pullPolicy`                                                          | nifi Image pull policy                                                                                             | `nil`                  |
-| `image.pullSecret`                                                          | nifi Image pull secret                                                                                             | `nil`                           |
+| `image.pullSecretName`                                                          | nifi Image pull secret                                                                                             | `nil`                           |
 | `image.usePullSecret`                                                          | nifi pull secret required or not                                                                                             | `nil`                           |
 | **SecurityContext**                                                         |
 | `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `nil`                          |
 | `securityContext.fsGroup`                                                   | nifi Docker Group                                                                                                  | `nil`                          |
-| `securityContext.runAsGroup`                                                   | nifi Docker Group                                                                                                  | `nil`                          |
+| `securityContext.runAsGroup`                                                   | nifi Docker Group                               | `nil`                          |
+| **Environment Variables**
+| `envvar.name`                                                   | Environment Variable Name                            | `nil`                          |
+| `envvar.value`                                                   | Environment Variable value                            | `nil`                          |
 | **Service**                                                                     |
 | `service.annotations`                                                            | ADD Annotation If LoadBalancer InternalIP set to true                                                                                 | `nil`                         |
-| `service.type.`    | `nil` | Service type  |
+| `service.type.`    | `ClusterIP` | Service type  |
 | `service.loadbalancerInternal_IP`       | Set to true when need to use Internal LoadBalancer IP | `nil` |
-| `service.staticIP`                | Set to true when need to use static LoadBalancer IP                                               | `{}`                            |
+| `service.staticIP`                | Set to true when need to use static LoadBalancer IP                                               | `nil`                            |
+| `service.staticLoadBalancerIp`                |  use static LoadBalancer IP                        | `nil`                            |
 | `service.loadBalancerSourceRanges`                                                   | Set when need to use LoadBalancer Source IP Ranges                                                                                      | `nil`                      |
 | `service.name`    | Service Name                               | `nil`                          |
 | `service.portname`            | Service Port Name                         | `nil`                          |
-| `sts.hostAliases    `                                                       | Add entries to Pod /etc/hosts                                                                                      | `[]`                            |
+| `service.ports    `                                                       | service ports to be opened                        | `[]`                            |
 | **secrets**
 | `secrets`                                                                   | Pass any secrets to the nifi pods. The secret can also be mounted to a specific path if required.                  | `nil`                           |
 | **configmaps**
