@@ -49,6 +49,7 @@ Configuration
 | `securityContext.fsGroup`                                                   | nifi Docker Group                                                                                                  | `nil`                          |
 | `securityContext.runAsGroup`                                                   | nifi Docker Group                               | `nil`                          |
 | **Environment Variables**
+| `envvar`                                                   | Additional environment variables for the nifi-container of properities name and value                               | `nil`                          |
 | **Service**                                                                     |
 | `service.annotations`                                                            | ADD Annotation If LoadBalancer InternalIP set to true                                                                                 | `nil`                         |
 | `service.type`    | `ClusterIP` | Service type  |
@@ -59,7 +60,6 @@ Configuration
 | `service.name`    | Service Name                               | `nil`                          |
 | `service.portname`            | Service Port Name                         | `nil`                          |
 | `service.ports    `                                                       | service ports to be opened                        | `[]`                            |
-
 | **containers**
 | `containers.name`   | Container Name               | `nil`                           | 
 | `containers.ports`   | Container ports                | `[]`                           | 
