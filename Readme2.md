@@ -1,8 +1,8 @@
-# Helm Chart for Apache NiFi
+# Helm Chart for Apache NiFi Registry
 
 ## Introduction
 
-This Helm chart installs Apache NiFi  in a Kubernetes cluster.
+This Helm chart installs Apache NiFi  Registry in a Kubernetes cluster.
 
 ## Prerequisites
 
@@ -13,9 +13,13 @@ This Helm chart installs Apache NiFi  in a Kubernetes cluster.
 
 ### Install the chart
 
-Install the nifi helm chart with a release name my-release:
+Install the nifi-registry helm chart with a release name my-release:
 
-helm install my-release nifi/
+helm install my-release nifi-registry/
+
+**Install with custom values.yaml**
+
+helm install my-release nifi-registry/ -f values.yaml
 
 
 ## Uninstallation
@@ -37,7 +41,7 @@ Configuration
 | **Environment**                                                            |
 | `env`                                                              | Environment Label where application to be deployed                                                                                              | `nil`                             |
 | **Name**                                                            |
-| `Name`                                                              |  Application Name to be deployed                                                                                             | `nil`                             |
+| `Name`                                                              |  Application Name to be deployed                                                                                             | `nifi-registry`                             |
 | **Image**                                                                   |
 | `image.registry`                                                          | nifi Image registry name                                                                                                    | `nil`                   |
 | `image.tag`                                                                   | nifi Image tag                                                                                                     | `nil`                        |
@@ -46,10 +50,9 @@ Configuration
 | `image.usePullSecret`                                                          | nifi pull secret required or not. Id required make it to true                                                                                           | `nil`                           |
 | **SecurityContext**                                                         |
 | `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `nil`                          |
-| `securityContext.fsGroup`                                                   | nifi Docker Group                                                                                                  | `nil`                          |
+| `securityContext.fsGroup`                                                   | nifi file system Group                                                                                                  | `nil`                          |
 | `securityContext.runAsGroup`                                                   | nifi Docker Group                               | `nil`                          |
-| **Environment Variables**
-| `envvar`                                                   | Additional environment variables for the nifi-container of properities name and value                               | `nil`                          |
+                          |
 | **Service**                                                                     |
 | `service.annotations`                                                            | ADD Annotation If LoadBalancer InternalIP set to true                                                                                 | `nil`                         |
 | `service.type`    | `ClusterIP` | Service type  |
