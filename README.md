@@ -49,7 +49,7 @@ Configuration
 | `securityContext.fsGroup`                                                   | nifi Docker Group                                                                                                  | `nil`                          |
 | `securityContext.runAsGroup`                                                   | nifi Docker Group                               | `nil`                          |
 | **Environment Variables**
-| `envvar`                                                   |   Additional environment variables for the nifi-container with properities of name and value                            | `nil`                          
+| `envvar`                                                   |   Additional environment variables for the nifi-container with properities of name and value                            | `nil`                          |
 
 | **Service**                                                                     |
 | `service.annotations`                                                            | ADD Annotation If LoadBalancer InternalIP set to true                                                                                 | `nil`                         |
