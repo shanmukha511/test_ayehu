@@ -43,15 +43,15 @@ Configuration
 | **Name**                                                            |
 | `Name`                                                              |  Application Name to be deployed                                                                                             | `nifi`                             |
 | **Image**                                                                   |
-| `image.registry`                                                          | nifi Image registry name                                                                                                    | `nil`                   |
-| `image.tag`                                                                   | nifi Image tag                                                                                                     | `nil`                        |
-| `image.pullPolicy`                                                          | nifi Image pull policy                                                                                             | `nil`                  |
-| `image.pullSecretName`                                                          | nifi Image pull secret name                                                                                          | `nil`                           |
-| `image.usePullSecret`                                                          | nifi pull secret required or not. Id required make it to true                                                                                           | `nil`                           |
+| `image.registry`                                                          |  Image registry name                                                                                                    | `nil`                   |
+| `image.tag`                                                                   |  Image tag                                                                                                     | `nil`                        |
+| `image.pullPolicy`                                                          |  Image pull policy                                                                                             | `nil`                  |
+| `image.pullSecretName`                                                          |  Image pull secret name                                                                                          | `nil`                           |
+| `image.usePullSecret`                                                          |  pull secret required or not. Id required make it to true                                                                                           | `nil`                           |
 | **SecurityContext**                                                         |
-| `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `nil`                          |
-| `securityContext.fsGroup`                                                   | nifi nifi file system   Group                                                                                                  | `nil`                          |
-| `securityContext.runAsGroup`                                                   | nifi Docker Group                               | `nil`                          |
+| `securityContext.runAsUser`                                                 |  Docker User                                                                                                   | `nil`                          |
+| `securityContext.fsGroup`                                                   |   file system   Group                                                                                                  | `nil`                          |
+| `securityContext.runAsGroup`                                                   |  Docker Group                               | `nil`                          |
 | **Environment Variables**
 | `envvar`                                                   | Additional environment variables for the nifi-container of properities name and value                               | `nil`                          |
 | **Service**                                                                     |
