@@ -47,16 +47,16 @@ Configuration
 | `image.tag`                                                                   |  Image tag                                                                                                     | `nil`                        |
 | `image.pullPolicy`                                                          |  Image pull policy                                                                                             | `nil`                  |
 | `image.pullSecretName`                                                          |  Image pull secret name                                                                                          | `nil`                           |
-| `image.usePullSecret`                                                          |  pull secret required or not. Id required make it to true                                                                                           | `nil`                           |
+| `image.usePullSecret`                                                          |  pull secret required or not. If required make it to true                                                                                           | `nil`                           |
 | **SecurityContext**                                                         |
-| `securityContext.runAsUser`                                                 |  Docker User                                                                                                   | `nil`                          |
-| `securityContext.fsGroup`                                                   |   file system   Group                                                                                                  | `nil`                          |
-| `securityContext.runAsGroup`                                                   |  Docker Group                               | `nil`                          |
+| `securityContext.runAsUser`                                                 |  User ID for containerized process User                                                                                                   | `nil`                          |
+| `securityContext.fsGroup`                                                   |   Group ID for containerized process Group                                                                                                  | `nil`                          |
+| `securityContext.runAsGroup`                                                   |  Group ID for containerized process                               | `nil`                          |
 | **Environment Variables**
 | `envvar`                                                   | Additional environment variables for the nifi-container of properities name and value                               | `nil`                          |
 | **Service**                                                                     |
 | `service.annotations`                                                            | ADD Annotation If LoadBalancer InternalIP set to true                                                                                 | `nil`                         |
-| `service.type`    | `ClusterIP` | Service type  |
+| `service.type`    | service type |  `ClusterIP`  |
 | `service.loadbalancerInternal_IP`       | Set to true when need to use Internal LoadBalancer IP | `nil` |
 | `service.staticIP`                | Set to true when need to use static LoadBalancer IP                                               | `nil`                            |
 | `service.staticLoadBalancerIp`                |  use static LoadBalancer IP                        | `nil`                            |
