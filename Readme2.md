@@ -17,7 +17,7 @@ Install the nifi-registry helm chart with a release name my-release:
 
 helm install my-release nifi-registry/
 
-**Install with custom values.yaml**
+## Install with custom values.yaml
 
 helm install my-release nifi-registry/ -f values.yaml
 
@@ -63,8 +63,8 @@ Configuration
 | `service.portname`            | Service Port Name                         | `nil`                          |
 | `service.ports    `                                                       | service ports to be opened                        | `[]`                            |
 | **containers**
-| `containers.name`   | Container Name               | `nil`                           | 
-| `containers.ports`   | Container ports                | `[]`                           | 
+| `containers.name`   | Container Name               | `nil`                           |
+| `containers.ports`   | Container ports                | `[]`                           |
 | **probes**
 | `probes`                                                                | Readiness and Liveliness probes need to be configured if required            | `nil`                           |
 | **Resources**
