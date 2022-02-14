@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This Helm chart installs Apache NiFi  Registry in a Kubernetes cluster.
+This Helm chart installs Apache NiFi Registry in a Kubernetes cluster.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ helm install my-release nifi-registry/
 
 ## Install with custom values.yaml
 
-helm install my-release nifi-registry/ -f values.yaml
+helm install my-release nifi-registry/ -f custom-values.yaml
 
 
 ## Uninstallation
@@ -43,18 +43,18 @@ Configuration
 | **Name**                                                            |
 | `Name`                                                              |  Application Name to be deployed                                                                                             | `nifi-registry`                             |
 | **Image**                                                                   |
-| `image.registry`                                                          | nifi Image registry name                                                                                                    | `nil`                   |
-| `image.tag`                                                                   | nifi Image tag                                                                                                     | `nil`                        |
-| `image.pullPolicy`                                                          | nifi Image pull policy                                                                                             | `nil`                  |
-| `image.pullSecretName`                                                          | nifi Image pull secret name                                                                                          | `nil`                           |
-| `image.usePullSecret`                                                          | nifi pull secret required or not. Id required make it to true                                                                                           | `nil`                           |
+| `image.registry`                                                          |  Image registry name                                                                                                    | `nil`                   |
+| `image.tag`                                                                   |  Image tag                                                                                                     | `nil`                        |
+| `image.pullPolicy`                                                          |  Image pull policy                                                                                             | `nil`                  |
+| `image.pullSecretName`                                                          |  Image pull secret name                                                                                          | `nil`                           |
+| `image.usePullSecret`                                                          |  pull secret required or not. Id required make it to true                                                                                           | `nil`                           |
 | **SecurityContext**                                                         |
-| `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `nil`                          |
-| `securityContext.fsGroup`                                                   | nifi file system Group                                                                                                  | `nil`                          |
-| `securityContext.runAsGroup`                                                   | nifi Docker Group                               | `nil`                          |
+| `securityContext.runAsUser`                                                 | User ID containerized process User                                                                                                   | `nil`                          |
+| `securityContext.fsGroup`                                                   | Group ID containerized process Group                                                                                                  | `nil`                          |
+| `securityContext.runAsGroup`                                                   | Group ID for containerized process                               | `nil`                          |
 | **Service**                                                                     |
 | `service.annotations`                                                            | ADD Annotation If LoadBalancer InternalIP set to true                                                                                 | `nil`                         |
-| `service.type`    | `ClusterIP` | Service type  |
+| `service.type`    | Service type |  `ClusterIP` |
 | `service.loadbalancerInternal_IP`       | Set to true when need to use Internal LoadBalancer IP | `nil` |
 | `service.staticIP`                | Set to true when need to use static LoadBalancer IP                                               | `nil`                            |
 | `service.staticLoadBalancerIp`                |  use static LoadBalancer IP                        | `nil`                            |
