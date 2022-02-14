@@ -59,13 +59,13 @@ Configuration
 | `service.type`    | service type |  `ClusterIP`  |
 | `service.loadbalancerInternal_IP`       | Set to true when need to use Internal LoadBalancer IP | `nil` |
 | `service.staticIP`                | Set to true when need to use static LoadBalancer IP                                               | `nil`                            |
-| `service.staticLoadBalancerIp`                |  use static LoadBalancer IP                        | `nil`                            |
-| `service.loadBalancerSourceRanges`                                                   | Set when need to use LoadBalancer Source IP Ranges                                                                                      | `nil`                      |
+| `service.staticLoadBalancerIp`                |  use static LoadBalancer IP  when required                      | `nil`                            |
+| `service.loadBalancerSourceRanges`                                                   | Set when need to use LoadBalancer Source IP Ranges                                                                                      | `[]`                      |
 | `service.name`    | Service Name                               | `nil`                          |
 | `service.portname`            | Service Port Name                         | `nil`                          |
 | `service.ports    `                                                       | service ports to be opened                        | `[]`                            |
 | **containers**
-| `containers.name`   | Container Name               | `nil`                           |
+| `containers.name`   | Container Name               | `nifi`                           |
 | `containers.ports`   | Container ports                | `[]`                           |
 | **probes**
 | `probes`                                                                | Readiness and Liveliness probes need to be configured if required            | `nil`                           |
