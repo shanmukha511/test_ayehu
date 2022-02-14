@@ -15,18 +15,18 @@ This Helm chart installs Apache NiFi  in a Kubernetes cluster.
 
 Install the nifi helm chart with a release name my-release:
 
-helm install my-release nifi/
+> helm install my-release nifi/
 
 ## Install with custom values.yaml
 
-helm install my-release nifi/ -f custom-values.yaml
+>  helm install my-release nifi/ -f custom-values.yaml
 
 
 ## Uninstallation
 
 To uninstall/delete the my-release deployment:
 
-helm uninstall my-release
+>  helm uninstall my-release
 
 ## Configuration
 
