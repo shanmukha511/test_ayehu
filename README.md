@@ -19,7 +19,7 @@ helm install my-release nifi/
 
 ## Install with custom values.yaml
 
-helm install my-release nifi/ -f values.yaml
+helm install my-release nifi/ -f custom-values.yaml
 
 
 ## Uninstallation
