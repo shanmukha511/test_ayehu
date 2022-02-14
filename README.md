@@ -17,6 +17,10 @@ Install the nifi helm chart with a release name my-release:
 
 helm install my-release nifi/
 
+## Install with custom values.yaml
+
+helm install my-release nifi/ -f values.yaml
+
 
 ## Uninstallation
 
@@ -37,7 +41,7 @@ Configuration
 | **Environment**                                                            |
 | `env`                                                              | Environment Label where application to be deployed                                                                                              | `nil`                             |
 | **Name**                                                            |
-| `Name`                                                              |  Application Name to be deployed                                                                                             | `nil`                             |
+| `Name`                                                              |  Application Name to be deployed                                                                                             | `nifi`                             |
 | **Image**                                                                   |
 | `image.registry`                                                          | nifi Image registry name                                                                                                    | `nil`                   |
 | `image.tag`                                                                   | nifi Image tag                                                                                                     | `nil`                        |
@@ -46,7 +50,7 @@ Configuration
 | `image.usePullSecret`                                                          | nifi pull secret required or not. Id required make it to true                                                                                           | `nil`                           |
 | **SecurityContext**                                                         |
 | `securityContext.runAsUser`                                                 | nifi Docker User                                                                                                   | `nil`                          |
-| `securityContext.fsGroup`                                                   | nifi Docker Group                                                                                                  | `nil`                          |
+| `securityContext.fsGroup`                                                   | nifi nifi file system   Group                                                                                                  | `nil`                          |
 | `securityContext.runAsGroup`                                                   | nifi Docker Group                               | `nil`                          |
 | **Environment Variables**
 | `envvar`                                                   | Additional environment variables for the nifi-container of properities name and value                               | `nil`                          |
@@ -61,8 +65,8 @@ Configuration
 | `service.portname`            | Service Port Name                         | `nil`                          |
 | `service.ports    `                                                       | service ports to be opened                        | `[]`                            |
 | **containers**
-| `containers.name`   | Container Name               | `nil`                           | 
-| `containers.ports`   | Container ports                | `[]`                           | 
+| `containers.name`   | Container Name               | `nil`                           |
+| `containers.ports`   | Container ports                | `[]`                           |
 | **probes**
 | `probes`                                                                | Readiness and Liveliness probes need to be configured if required            | `nil`                           |
 | **Resources**
