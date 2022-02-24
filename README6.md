@@ -73,7 +73,6 @@ Configuration
 | `initContainers.securityContext.runAsUser`   | Init Container User ID           | ``                           |
 | `initContainers.securityContext.volumeMounts.name`   | volume mount name           | ``                           |
 | `initContainers.securityContext.volumeMounts.mountpath`   | volume mount path           | ``                           |
-
 | **containers**
 | `containers.name`   | Container Name               | `nifi`                           |
 | `containers.ports`   | Container ports                | `[]`                           |
