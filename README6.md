@@ -41,7 +41,7 @@ Configuration
 | **Environment**                                                            |
 | `env`                                                              | Environment Label where application to be deployed                                                                                              | `nil`                             |
 | **Name**                                                            |
-| `Name`                                                              |  Application Name to be deployed                                                                                             | `Arango`                             |
+| `Name`                                                              |  Application Name to be deployed                                                                                             | `nil`                             |
 | **Image**                                                                   |
 | `image.registry`                                                          |  Image registry name                                                                                                    | `nil`                   |
 | `image.tag`                                                                   |  Image tag                                                                                                     | `nil`                        |
