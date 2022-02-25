@@ -63,7 +63,7 @@ Configuration
 | `service.loadBalancerSourceRanges`                                                   | Set when need to use LoadBalancer Source IP Ranges                                                                                      | `[]`                      |
 | `service.name`    | Service Name                               | `nil`                          |
 | `service.ports    `                                                       | service ports to be opened                        | `[]`                            |
-| **Init containers to change pvc volume ownership to arangodb user**
+| **Init containers used here to change pvc volume ownership to arangodb user**
 | `initContainers.enabled`   |  Set to true when need to use init containers              | `nil`                           |
 | `initContainers.name`   | Init Container name               | `init`                           |
 | `initContainers.image`   | Init Container image                | `busybox:latest`                           |
