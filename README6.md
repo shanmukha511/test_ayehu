@@ -73,7 +73,7 @@ Configuration
 | `initContainers.securityContext.volumeMounts.name`   | volume mount name           | ``                           |
 | `initContainers.securityContext.volumeMounts.mountpath`   | volume mount path           | ``                           |
 | **containers**
-| `containers.name`   | Container Name               | `nifi`                           |
+| `containers.name`   | Container Name               | `arango`                           |
 | `containers.ports`   | Container ports                | `[]`                           |
 | **probes**
 | `probes`                                                                | Readiness and Liveliness probes need to be configured if required            | `nil`                           |
