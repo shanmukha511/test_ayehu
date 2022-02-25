@@ -28,6 +28,14 @@ To uninstall/delete the my-release deployment:
 
 > helm uninstall my-release
 
+
+##Init container Usage
+
+Here in this Helm chart we are using Init Container which can enabled by setting value to true else if not required then set to false.
+
+If we want run arango pod with non root user and want to mount volume with that user and group permission then in that case we deploy initContainer which changes permission of volume from root user to non root user and complete it action.
+
+
 ## Configuration
 
 Configuration
