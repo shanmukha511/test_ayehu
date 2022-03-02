@@ -29,7 +29,7 @@ To uninstall/delete the my-release deployment:
 > helm uninstall my-release
 
 
-## Init container Usage
+##Init container Usage
 
 Here in this Helm chart we are using Init Container which can enabled by setting value to true else if not required then set to false.
 
