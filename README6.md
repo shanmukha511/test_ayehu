@@ -41,8 +41,8 @@ To remove init container from helm deployment we need to set initContainers set 
 
 **Values.yaml**
 
-**initContainers:
-  enabled: false**
+initContainers:
+  enabled: false
 
 > helm upgrade my-release -f values.yaml
 
