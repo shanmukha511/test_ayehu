@@ -35,6 +35,16 @@ Here in this Helm chart we are using Init Container which can enabled by setting
 
 If we want run arango pod with non root user and want to mount volume with that user and group permission then in that case we deploy initContainer which changes permission of volume from root user to non root user and complete it action.
 
+## To remove Init container once helm deployed
+
+To remove init container from helm deployment we need to set initContainers set enabled value to false and upgrade the helm with the updated values.yaml.So that init container can be removed from helm deployment.
+
+**Values.yaml**
+
+**initContainers:
+  enabled: false**
+
+> helm upgrade my-release -f values.yaml
 
 ## Configuration
 
